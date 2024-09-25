@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @reviews = movie.build_new_reviews
   end
 
-  # GET /movies/:id/reviews or /movies/:id/reviews/movies.json
+  # GET /movies/:id/reviews or /movies/:id/reviews.json
   def index
     @total_score_by_categories = []
 

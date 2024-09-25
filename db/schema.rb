@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_25_042215) do
     t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_reviews_on_category"
     t.index ["movie_id"], name: "index_reviews_on_movie_id"
   end
 

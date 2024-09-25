@@ -6,5 +6,7 @@ class CreateReviews < ActiveRecord::Migration[7.1]
       t.integer :category, null: false
       t.timestamps
     end
+
+    add_index :reviews, :category
   end
 end
