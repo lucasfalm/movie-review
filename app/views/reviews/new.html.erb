@@ -1,0 +1,11 @@
+<h1>Review the movie: <%= @movie.name %></h1>
+
+<div style="display: flex; flex-direction: row; gap: 1rem; justify-content: center; align-items: center;">
+  <%= render "form", movie: @movie %>
+  <br>
+</div>
+
+<div style="margin-top: 3rem; display: flex; flex-direction: row; gap: 1rem; justify-content: center; align-items: center;">
+  <%= link_to "Back to movies", movies_path %>
+</div>
+

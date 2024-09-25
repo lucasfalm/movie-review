@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Reviews</h1>
+
+<div id="reviews" style="display: flex; flex-direction: row; gap: 1rem; justify-content: center; align-items: center;">
+  <% @total_score_by_categories.each do |total_score_by_category| %>
+    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center;">
+      <div>
+        <%= total_score_by_category[:category] %>
+      </div>
+      <div>
+        <%= total_score_by_category[:total_score] %>
+      </div>
+    </div>
+  <% end %>
+
+  <div style="margin-left: 2rem; font-weight: 800; font-size: 1.2rem">
+    Total Score
+
+    <%= @total_score %>
+  </div>
+</div>
+
+<div style="margin-top: 3rem; display: flex; flex-direction: row; gap: 1rem; justify-content: center; align-items: center;">
+  <%= link_to "Write a new review", new_movie_review_path %>
+  <%= link_to "Back to Movie", movie_path(@movie) %>
+</div>

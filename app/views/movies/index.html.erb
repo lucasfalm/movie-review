@@ -2,13 +2,18 @@
 
 <h1>Movies</h1>
 
-<div id="movies">
+<div id="movies" style="display: flex; flex-direction: row; gap: 2rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
   <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
+    <div style="display: flex; flex: 1; flex-direction: column; gap: 1rem; align-items: center; justify-content: center; min-width: 20rem;">
+      <%= render movie %>
+      <p>
+        <%= link_to "Show this movie", movie %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
+<div style="margin-top: 3rem; display: flex; flex-direction: row; gap: 1rem; justify-content: center; align-items: center;">
+  <%= link_to "New movie", new_movie_path %>
+</div>
+

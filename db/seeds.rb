@@ -56,3 +56,14 @@ Movie.create!(
   name: "12th Fail",
   description: "The real-life story of IPS Officer Manoj Kumar Sharma and IRS Officer Shraddha Joshi.",
 )
+
+Movie.all.each do |movie|
+  rand(1..20).times do
+    Review.categories.each do |category, _category_index|
+      Review.create!(
+        score: rand(Review::MIN_SCORE..Review::MAX_SCORE),
+        category: category, movie: movie
+      )
+    end
+  end
+end

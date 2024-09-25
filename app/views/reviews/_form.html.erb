@@ -1,0 +1,28 @@
+<%= form_with(url: movie_reviews_path(@movie), method: :post, local: true) do |form| %>
+
+  <% if @error_message.present? %>
+    <div style="color: red">
+      <ul>
+        <li><%= @error_message %></li>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @reviews.each_with_index do |review, index| %>
+    <div class="review-fields">
+      <h3>How do you score the <%= review.humanized_category %>?</h3>
+
+      <div>
+        <%= form.label :score, "Score (#{Review::MIN_SCORE}-#{Review::MAX_SCORE})", for: "review_score_#{index}" %>
+        <%= form.number_field "reviews[][score]", value: review.score, min: Review::MIN_SCORE, max: Review::MAX_SCORE, id: "review_score_#{index}" %>
+        <%= form.hidden_field "reviews[][category]", value: review.category, id: "review_category_#{index}" %>
+      </div>
+
+      <hr>
+    </div>
+  <% end %>
+
+  <div style="margin-top: 1rem; display: flex; justify-content: center; width: 100%;">
+    <%= form.submit "Send your review" %>
+  </div>
+<% end %>

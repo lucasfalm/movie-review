@@ -1,0 +1,13 @@
+one:
+  score: 5
+  category: 0
+  movie: one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+two:
+  score: 4
+  category: 1
+  movie: two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

@@ -1,0 +1,19 @@
+<h1>Reviews Created Successfully!</h1>
+
+<p>Here are the reviews you just submitted for the movie <%= @movie.name %>:</p>
+
+<ul>
+  <% @created_reviews.each do |review| %>
+    <li>
+      <strong>Category:</strong> <%= review.humanized_category %><br>
+      <strong>Score:</strong> <%= review.score %><br>
+    </li>
+    <hr>
+  <% end %>
+
+  <div>
+    Total Score: <%= @total_score %>
+  </div>
+</ul>
+
+<%= link_to 'Back to Reviews', movie_reviews_path(@movie) %>
